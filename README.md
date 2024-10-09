@@ -45,7 +45,7 @@ Here are the key assumptions made when writing this solution:
 
 ### **Prerequisites**
 
-- **Python 3.x** must be installed on your machine.
+- **Python 3.8 or above** must be installed on your machine.
 - You'll need two input files:
   - **Flow log file** (e.g., `flow_log.txt`)
   - **Lookup table** (e.g., `lookup.csv`)
