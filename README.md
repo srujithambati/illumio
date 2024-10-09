@@ -77,4 +77,30 @@ Once the script completes, two CSV files will be created:
 - **tag_counts.csv**: This file contains the counts of each tag applied to the flow log entries.
 - **port_protocol_counts.csv**: This file contains the counts of unique destination port and protocol combinations.
 
-   
+# Tests Performed
+
+### **Test Cases Covered**:
+
+1. **Basic Flow Log Parsing**:
+- A flow log that follows the expected format and matches entries in the lookup table.
+
+2. **Invalid or Missing Fields in Flow Log**:
+- Flow log entries with fewer than 14 fields were correctly skipped without crashing.
+
+3. **Bad Lookup Table**:
+- Rows in the lookup table with missing or invalid fields were correctly skipped.
+
+4. **Case Insensitivity for Protocol Names**:
+- Protocol names were tested in both upper and lower case to ensure case-insensitive matching (`tcp` vs. `TCP`).
+
+5. **Duplicate Port/Protocol Entries**:
+- Tested the lookup table with duplicate entries for the same port/protocol combination to ensure that the last entry is applied.
+
+6. **Unmatched Entries**:
+- Flow log entries with ports or protocols not present in the lookup table were correctly tagged as `"Untagged"`.
+
+
+### **Test Results**:
+All test cases passed, and the program handled invalid input gracefully without crashing.
+
+
